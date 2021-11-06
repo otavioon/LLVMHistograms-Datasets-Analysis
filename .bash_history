@@ -114,3 +114,20 @@ git fetch
 git branch -M main
 git reset --hard origin/master
 rm -rf .git
+cd
+ls
+chown eloko-proj histograms_analysis_PCA.ipynb 
+ls
+rm -rf .git
+git init .
+git remote add origin https://github.com/otavioon/LLVMHistograms-Datasets-Analysis.git
+git branch -M main
+git add .
+git commit -m "First commit"
+git config --global user.email "otavio.napoli"gmail.com" 
+git config --global user.email "otavio.napoli@gmail.com" 
+git commit -m "First commit"
+git remote add origin https://github.com/otavioon/LLVMHistograms-Datasets-Analysis.git
+git push
+git push --set-upstream origin master
+git push --set-upstream origin master
