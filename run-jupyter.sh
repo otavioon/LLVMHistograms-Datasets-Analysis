@@ -1,0 +1,1 @@
+docker run --gpus all -it --rm --ipc=host -e SHELL="/bin/bash" -p 8888:8888 -v`pwd`:/root ufoym/deepo:latest python -m jupyterlab --port 8888 --no-browser --ip='*' --NotebookApp.token='' --NotebookApp.password='' --allow-root --notebook-dir=/root
