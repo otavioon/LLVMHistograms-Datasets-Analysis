@@ -131,3 +131,10 @@ git remote add origin https://github.com/otavioon/LLVMHistograms-Datasets-Analys
 git push
 git push --set-upstream origin master
 git push --set-upstream origin master
+ls
+cd
+ls
+git add .
+git commit -m 'Added experiments'
+git push
+git push
