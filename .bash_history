@@ -138,3 +138,20 @@ git add .
 git commit -m 'Added experiments'
 git push
 git push
+ls
+cd
+ks
+ls
+git add .
+git commit -m "Added SVm training"
+git push
+git push
+exit
+git add .
+cd
+git add .
+git commit -m "Added more classifiers"
+git push
+git add .
+git commit -m "Added more classifiers"
+git push
