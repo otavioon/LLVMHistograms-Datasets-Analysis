@@ -6,6 +6,13 @@ from sklearn.metrics import f1_score
 
 import pandas as pd
 
+# Verbosity level
+verbosity_level = 2
+
+def verbose(level, msg):
+    if level >= verbosity_level:
+        print("  "*level + msg)
+
 def main():
 
     datasets = []
@@ -32,7 +39,6 @@ def main():
         print("\pacc{"+ds_name+"}{Fig. ?}{"+"{:.1f}".format(LR)+"}{"+"{:.1f}".format(DT)+"}{"+"{:.1f}".format(KNN)+"}{"+"{:.1f}".format(SVM)+"}")
         
 
-
 def eval_model(X,y,model):
     model_pred = model.predict(X)
     model_accuracy = accuracy_score(y, model_pred)
@@ -52,6 +58,7 @@ def search_best_SVM_model(X_train, X_val, y_train, y_val):
         for C in [0.1, 10.0, 100.0, 1000.0, 10000.0]:
             model = svm.SVC(kernel=kernel, gamma='scale', C=C, degree=3)
             acc, f1, model = train_model(X_train, X_val, y_train, y_val, model)
+            verbose(2, "SVM: val acc: {}: C : {} : kernel : {}".format(acc,C,kernel))
             if not best_params or best_params["Val acc"] < acc:
                 best_params = { "Val acc": acc, "F1": f1, "params" : {"C":C, "kernel":kernel}, "model" : model}
     return best_params
@@ -63,6 +70,7 @@ def search_best_KNN_model(X_train, X_val, y_train, y_val):
             # we create an instance of Neighbours Classifier and fit the data.
             model = neighbors.KNeighborsClassifier(n_neighbors, weights=weights)
             acc, f1, model = train_model(X_train, X_val, y_train, y_val, model)
+            verbose(2, "KNN: val acc: {}: weights : {} : n_neighbors : {}".format(acc,weights,n_neighbors))
             if not best_params or best_params["Val acc"] < acc:
                 best_params = { "Val acc": acc, "F1": f1,  "params" : {"weights":weights, "n_neighbors":n_neighbors} , "model" : model}
     return best_params
@@ -77,6 +85,7 @@ def search_best_LR_model(X_train, X_val, y_train, y_val):
                     C=c/len(X_train.index)
                     model = linear_model.LogisticRegression(C=C, penalty="l1", solver="saga", tol=0.1)
                     acc, f1, model = train_model(X_train, X_val, y_train, y_val, model)
+                    verbose(2, "LR: val acc: {}: C : {} : tol : {} : penalty : {} : solver : {}".format(acc,C,tol,penalty,solver))
                     if not best_params or best_params["Val acc"] < acc:
                         best_params = { "Val acc": acc, "F1": f1,  "params" : {"C":C, "tol":tol, "penalty":penalty, "solver":solver} , "model" : model}
     return best_params
@@ -88,12 +97,14 @@ def search_best_SGDC_model(X_train, X_val, y_train, y_val):
             for max_iter in [50]:
                 model = linear_model.SGDClassifier(loss=loss, penalty=penalty)
                 acc, f1, model = train_model(X_train, X_val, y_train, y_val, model)
+                verbose(2, "SGDC: val acc: {}: loss : {} : penalty : {} : max_iter : {}".format(acc,loss,penalty,max_iter))
                 if not best_params or best_params["Val acc"] < acc:
                     best_params = { "Val acc": acc, "F1": f1,  "params" : {"loss":loss, "penalty":penalty, "max_iter":max_iter} , "model" : model}
     return best_params
 
 
 def read_and_split_dataset(filename):
+    verbose(1, "Reading and splitting dataset from "+filename)
     data = pd.read_csv(filepath_or_buffer=filename)
     X = data.iloc[0:,3:]
     y = data['class']
@@ -103,6 +114,7 @@ def read_and_split_dataset(filename):
     return X_train, y_train, X_val, y_val, X_test, y_test
 
 def read_dataset_splitted(train_filename, val_filename, test_filename):
+    verbose(1, "Reading split dataset from multiple files ("+train_filename+","+val_filename+","+test_filename+")")
     train_data = pd.read_csv(filepath_or_buffer=train_filename)
     X_train = train_data.iloc[0:,3:]
     y_train = train_data['class']
@@ -129,6 +141,7 @@ def evaluate_dataset(ds_name, X_train, y_train, X_val, y_val, X_test, y_test, no
 
     prefix = ds_name + ": "
 
+    verbose(1, "Searching for best LR model")
     best_LR = search_best_LR_model(X_train, X_val, y_train, y_val)
     acc, f1 = eval_model(X_test, y_test, best_LR["model"])
     best_LR["Test acc"] = acc
@@ -136,6 +149,7 @@ def evaluate_dataset(ds_name, X_train, y_train, X_val, y_val, X_test, y_test, no
     print(prefix+"Best LR model"+suffix+": Test acc:", acc, ":", best_LR)
     result["LR"] = acc
 
+    verbose(1, "Searching for best DT model")
     acc, f1, dt_model = train_model(X_train, X_val, y_train, y_val, tree.DecisionTreeClassifier())
     best_DT = { "Val acc" : acc, "Val f1" : f1, "params" : "Default" , "model": dt_model}
     acc, f1 = eval_model(X_test, y_test, best_DT["model"])
@@ -144,6 +158,7 @@ def evaluate_dataset(ds_name, X_train, y_train, X_val, y_val, X_test, y_test, no
     print(prefix+"Best DT model"+suffix+": Test acc:", acc, ":", best_DT)
     result["DT"] = acc
 
+    verbose(1, "Searching for best KNN model")
     best_KNN = search_best_KNN_model(X_train, X_val, y_train, y_val)
     acc, f1  = eval_model(X_test, y_test, best_KNN["model"])
     best_KNN["Test acc"] = acc
@@ -151,6 +166,7 @@ def evaluate_dataset(ds_name, X_train, y_train, X_val, y_val, X_test, y_test, no
     print(prefix+"Best KNN model"+suffix+": Test acc:", acc, ":", best_KNN)
     result["KNN"] = acc
 
+    verbose(1, "Searching for best SVM model")
     best_SVM = search_best_SVM_model(X_train, X_val, y_train, y_val)
     acc, f1  = eval_model(X_test, y_test, best_SVM["model"])
     best_SVM["Test acc"] = acc
