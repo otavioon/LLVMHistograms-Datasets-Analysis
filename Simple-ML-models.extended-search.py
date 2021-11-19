@@ -59,12 +59,13 @@ def train_model(X_train, X_val, y_train, y_val, model):
 def search_best_SVM_model(X_train, X_val, y_train, y_val):
     search_start = time.time()
     best_params = None
-    for kernel in ['poly', 'rbf']:
-        for C in [0.1, 10.0, 100.0, 1000.0, 10000.0]:
-            model = svm.SVC(kernel=kernel, gamma='scale', C=C, degree=3)
-            acc, f1, model, t_time, v_time = train_model(X_train, X_val, y_train, y_val, model)
-            if not best_params or best_params["Val acc"] < acc:
-                best_params = { "Val acc": acc, "F1": f1, "Training Time":t_time, "Validation Time":v_time, "params" : {"C":C, "kernel":kernel}, "model" : model}
+    for kernel in ['poly', 'rbf', 'sigmoid']:
+        for C in [0.1, 1.0, 10.0, 100.0, 1000.0, 10000.0]:
+            for gamma in [1.0, 0.1, 0.01, 0.001, 'scale', 'auto']:
+                model = svm.SVC(kernel=kernel, gamma=gamma, C=C, degree=3)
+                acc, f1, model, t_time, v_time = train_model(X_train, X_val, y_train, y_val, model)
+                if not best_params or best_params["Val acc"] < acc:
+                    best_params = { "Val acc": acc, "F1": f1, "Training Time":t_time, "Validation Time":v_time, "params" : {"C":C, "kernel":kernel}, "model" : model}
     if best_params: best_params["Search Time"] = time.time() - search_start
     return best_params
 
@@ -85,10 +86,9 @@ def search_best_LR_model(X_train, X_val, y_train, y_val):
     search_start = time.time()
     best_params = None
     for penalty in ["l1", "elasticnet", "l2", "none"]:
-        for solver in ["lbfgs"]:
-        #for solver in ["newton-cg", "lbfgs", "liblinear", "sag", "saga"]:
+        for solver in ["newton-cg", "lbfgs", "liblinear", "sag", "saga"]:
             for c in [5, 10, 20, 50, 70, 100]:
-                for tol in [0.1, 0.5, 1.0]:
+                for tol in [0.0001, 0.1, 0.5, 1.0]:
                     C=c/len(X_train.index)
                     model = linear_model.LogisticRegression(C=C, penalty="l1", solver="saga", tol=0.1)
                     acc, f1, model, t_time, v_time = train_model(X_train, X_val, y_train, y_val, model)
