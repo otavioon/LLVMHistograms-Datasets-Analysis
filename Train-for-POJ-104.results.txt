@@ -1,0 +1,105 @@
+Command: python3 Train-for-POJ-104.py
+Fitting models for POJ-104-b (POJ-104 b)
+  Reading and splitting dataset from data/POJ-104-b.csv
+  Searching for best LR model
+    LR: val acc: 0.9807692307692307: C : 0.00016025641025641026 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 0.9134615384615385: C : 0.00016025641025641026 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 0.8846153846153846: C : 0.00016025641025641026 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 3.0: C : 0.0003205128205128205 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 2.8461538461538463: C : 0.0003205128205128205 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 3.0480769230769234: C : 0.0003205128205128205 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 4.423076923076923: C : 0.000641025641025641 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 4.471153846153846: C : 0.000641025641025641 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 4.403846153846154: C : 0.000641025641025641 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.346153846153847: C : 0.0016025641025641025 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.355769230769231: C : 0.0016025641025641025 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.3076923076923075: C : 0.0016025641025641025 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.278846153846154: C : 0.0022435897435897434 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.413461538461538: C : 0.0022435897435897434 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.4230769230769225: C : 0.0022435897435897434 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.4519230769230775: C : 0.003205128205128205 : tol : 0.1 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.480769230769231: C : 0.003205128205128205 : tol : 0.5 : penalty : l1 : solver : lbfgs
+    LR: val acc: 5.4519230769230775: C : 0.003205128205128205 : tol : 1.0 : penalty : l1 : solver : lbfgs
+    LR: val acc: 0.9903846153846154: C : 0.00016025641025641026 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 0.971153846153846: C : 0.00016025641025641026 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 0.951923076923077: C : 0.00016025641025641026 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 3.2692307692307696: C : 0.0003205128205128205 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 3.019230769230769: C : 0.0003205128205128205 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 3.019230769230769: C : 0.0003205128205128205 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 4.384615384615385: C : 0.000641025641025641 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 4.394230769230769: C : 0.000641025641025641 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 4.4326923076923075: C : 0.000641025641025641 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.3076923076923075: C : 0.0016025641025641025 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.3076923076923075: C : 0.0016025641025641025 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.3076923076923075: C : 0.0016025641025641025 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.4326923076923075: C : 0.0022435897435897434 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.365384615384616: C : 0.0022435897435897434 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.365384615384616: C : 0.0022435897435897434 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.461538461538462: C : 0.003205128205128205 : tol : 0.1 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.4326923076923075: C : 0.003205128205128205 : tol : 0.5 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 5.4423076923076925: C : 0.003205128205128205 : tol : 1.0 : penalty : elasticnet : solver : lbfgs
+    LR: val acc: 0.8846153846153846: C : 0.00016025641025641026 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 1.0096153846153846: C : 0.00016025641025641026 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 0.9038461538461539: C : 0.00016025641025641026 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 3.019230769230769: C : 0.0003205128205128205 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 3.0865384615384612: C : 0.0003205128205128205 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 3.057692307692308: C : 0.0003205128205128205 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 4.461538461538462: C : 0.000641025641025641 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 4.4423076923076925: C : 0.000641025641025641 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 4.509615384615385: C : 0.000641025641025641 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.317307692307692: C : 0.0016025641025641025 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.375: C : 0.0016025641025641025 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.326923076923077: C : 0.0016025641025641025 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.413461538461538: C : 0.0022435897435897434 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.4230769230769225: C : 0.0022435897435897434 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.4423076923076925: C : 0.0022435897435897434 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.4519230769230775: C : 0.003205128205128205 : tol : 0.1 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.4519230769230775: C : 0.003205128205128205 : tol : 0.5 : penalty : l2 : solver : lbfgs
+    LR: val acc: 5.471153846153847: C : 0.003205128205128205 : tol : 1.0 : penalty : l2 : solver : lbfgs
+    LR: val acc: 1.0096153846153846: C : 0.00016025641025641026 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 0.9903846153846154: C : 0.00016025641025641026 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 1.0096153846153846: C : 0.00016025641025641026 : tol : 1.0 : penalty : none : solver : lbfgs
+    LR: val acc: 2.9615384615384617: C : 0.0003205128205128205 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 2.9134615384615383: C : 0.0003205128205128205 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 2.9903846153846154: C : 0.0003205128205128205 : tol : 1.0 : penalty : none : solver : lbfgs
+    LR: val acc: 4.423076923076923: C : 0.000641025641025641 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 4.413461538461538: C : 0.000641025641025641 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 4.413461538461538: C : 0.000641025641025641 : tol : 1.0 : penalty : none : solver : lbfgs
+    LR: val acc: 5.346153846153847: C : 0.0016025641025641025 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 5.365384615384616: C : 0.0016025641025641025 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 5.346153846153847: C : 0.0016025641025641025 : tol : 1.0 : penalty : none : solver : lbfgs
+    LR: val acc: 5.4230769230769225: C : 0.0022435897435897434 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 5.413461538461538: C : 0.0022435897435897434 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 5.394230769230769: C : 0.0022435897435897434 : tol : 1.0 : penalty : none : solver : lbfgs
+    LR: val acc: 5.586538461538462: C : 0.003205128205128205 : tol : 0.1 : penalty : none : solver : lbfgs
+    LR: val acc: 5.4326923076923075: C : 0.003205128205128205 : tol : 0.5 : penalty : none : solver : lbfgs
+    LR: val acc: 5.4326923076923075: C : 0.003205128205128205 : tol : 1.0 : penalty : none : solver : lbfgs
+POJ-104 b: Best LR model: Test acc: 5.394230769230769 : {'Val acc': 5.586538461538462, 'F1': 1.4509500243155447, 'params': {'C': 0.003205128205128205, 'tol': 0.1, 'penalty': 'none', 'solver': 'lbfgs'}, 'model': LogisticRegression(C=0.003205128205128205, penalty='l1', solver='saga', tol=0.1), 'Test acc': 5.394230769230769, 'Test f1': 1.3540136849613886}
+  Searching for best DT model
+POJ-104 b: Best DT model: Test acc: 65.89423076923076 : {'Val acc': 64.3173076923077, 'Val f1': 64.4441614785329, 'params': 'Default', 'model': DecisionTreeClassifier(), 'Test acc': 65.89423076923076, 'Test f1': 65.88483131806201}
+  Searching for best KNN model
+    KNN: val acc: 62.42307692307693: weights : uniform : n_neighbors : 5
+    KNN: val acc: 64.60576923076923: weights : distance : n_neighbors : 5
+    KNN: val acc: 61.26923076923077: weights : uniform : n_neighbors : 10
+    KNN: val acc: 63.625: weights : distance : n_neighbors : 10
+    KNN: val acc: 59.49038461538462: weights : uniform : n_neighbors : 15
+    KNN: val acc: 62.25961538461539: weights : distance : n_neighbors : 15
+    KNN: val acc: 58.36538461538462: weights : uniform : n_neighbors : 20
+    KNN: val acc: 61.09615384615385: weights : distance : n_neighbors : 20
+    KNN: val acc: 53.48076923076923: weights : uniform : n_neighbors : 50
+    KNN: val acc: 56.70192307692308: weights : distance : n_neighbors : 50
+POJ-104 b: Best KNN model: Test acc: 65.36538461538461 : {'Val acc': 64.60576923076923, 'F1': 64.31152878722827, 'params': {'weights': 'distance', 'n_neighbors': 5}, 'model': KNeighborsClassifier(weights='distance'), 'Test acc': 65.36538461538461, 'Test f1': 64.94037950527735}
+  Searching for best SVM model
+    SVM: val acc: 18.28846153846154: C : 0.1 : kernel : poly
+    SVM: val acc: 53.31730769230769: C : 10.0 : kernel : poly
+    SVM: val acc: 66.20192307692308: C : 100.0 : kernel : poly
+    SVM: val acc: 72.4326923076923: C : 1000.0 : kernel : poly
+    SVM: val acc: 74.97115384615385: C : 10000.0 : kernel : poly
+    SVM: val acc: 26.16346153846154: C : 0.1 : kernel : rbf
+    SVM: val acc: 68.27884615384615: C : 10.0 : kernel : rbf
+    SVM: val acc: 74.82692307692308: C : 100.0 : kernel : rbf
+    SVM: val acc: 76.95192307692308: C : 1000.0 : kernel : rbf
+    SVM: val acc: 77.11538461538461: C : 10000.0 : kernel : rbf
+POJ-104 b: Best SVM model: Test acc: 78.0673076923077 : {'Val acc': 77.11538461538461, 'F1': 76.99448773226419, 'params': {'C': 10000.0, 'kernel': 'rbf'}, 'model': SVC(C=10000.0), 'Test acc': 78.0673076923077, 'Test f1': 77.90499914442735}
+{'POJ-104 b': {'LR': 5.394230769230769, 'DT': 65.89423076923076, 'KNN': 65.36538461538461, 'SVM': 78.0673076923077}}
+\pacc{POJ-104 b}{Fig. ?}{5.4}{65.9}{65.4}{78.1}
