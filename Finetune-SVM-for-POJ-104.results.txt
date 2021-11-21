@@ -1,0 +1,47 @@
+Command: python3 Finetune-SVM-for-POJ-104.py
+Fitting models for POJ-104-b (POJ-104 b)
+  Reading and splitting dataset from data/POJ-104-b.csv
+  Searching for best SVM model
+    SVM: val acc: 71.84615384615385: C : 1000.0 : kernel : poly : degree : 1
+    SVM: val acc: 74.95192307692308: C : 1000.0 : kernel : poly : degree : 2
+    SVM: val acc: 72.4326923076923: C : 1000.0 : kernel : poly : degree : 3
+    SVM: val acc: 67.84615384615384: C : 1000.0 : kernel : poly : degree : 4
+    SVM: val acc: 72.17307692307692: C : 10000.0 : kernel : poly : degree : 1
+    SVM: val acc: 76.46153846153845: C : 10000.0 : kernel : poly : degree : 2
+    SVM: val acc: 74.97115384615385: C : 10000.0 : kernel : poly : degree : 3
+    SVM: val acc: 72.34615384615385: C : 10000.0 : kernel : poly : degree : 4
+    SVM: val acc: 72.08653846153847: C : 20000.0 : kernel : poly : degree : 1
+    SVM: val acc: 76.38461538461539: C : 20000.0 : kernel : poly : degree : 2
+    SVM: val acc: 75.35576923076923: C : 20000.0 : kernel : poly : degree : 3
+    SVM: val acc: 72.8173076923077: C : 20000.0 : kernel : poly : degree : 4
+    SVM: val acc: 72.20192307692308: C : 50000.0 : kernel : poly : degree : 1
+    SVM: val acc: 76.67307692307692: C : 50000.0 : kernel : poly : degree : 2
+    SVM: val acc: 75.6826923076923: C : 50000.0 : kernel : poly : degree : 3
+    SVM: val acc: 73.6826923076923: C : 50000.0 : kernel : poly : degree : 4
+    SVM: val acc: 72.25961538461539: C : 100000.0 : kernel : poly : degree : 1
+    SVM: val acc: 76.41346153846153: C : 100000.0 : kernel : poly : degree : 2
+    SVM: val acc: 75.65384615384615: C : 100000.0 : kernel : poly : degree : 3
+    SVM: val acc: 73.95192307692308: C : 100000.0 : kernel : poly : degree : 4
+    SVM: val acc: 76.95192307692308: C : 1000.0 : kernel : rbf : degree : 1
+    SVM: val acc: 77.11538461538461: C : 10000.0 : kernel : rbf : degree : 1
+    SVM: val acc: 77.28846153846153: C : 20000.0 : kernel : rbf : degree : 1
+    SVM: val acc: 77.02884615384616: C : 50000.0 : kernel : rbf : degree : 1
+    SVM: val acc: 76.8173076923077: C : 100000.0 : kernel : rbf : degree : 1
+    SVM: val acc: 3.355769230769231: C : 1000.0 : kernel : sigmoid : degree : 1
+    SVM: val acc: 3.2884615384615388: C : 10000.0 : kernel : sigmoid : degree : 1
+    SVM: val acc: 3.2788461538461537: C : 20000.0 : kernel : sigmoid : degree : 1
+    SVM: val acc: 3.2788461538461537: C : 50000.0 : kernel : sigmoid : degree : 1
+    SVM: val acc: 3.2884615384615388: C : 100000.0 : kernel : sigmoid : degree : 1
+    SVM: error  : C : 1000.0 : kernel : precomputed : degree : 1
+    SVM: error  : C : 10000.0 : kernel : precomputed : degree : 1
+    SVM: error  : C : 20000.0 : kernel : precomputed : degree : 1
+    SVM: error  : C : 50000.0 : kernel : precomputed : degree : 1
+    SVM: error  : C : 100000.0 : kernel : precomputed : degree : 1
+POJ-104 b: Best SVM model: Test acc: 77.83653846153847 : {'Val acc': 77.28846153846153, 'F1': 77.17796302850462, 'params': {'C': 20000.0, 'kernel': 'rbf'}, 'model': SVC(C=20000.0, degree=1), 'Test acc': 77.83653846153847, 'Test f1': 77.66049810771662}
+{'POJ-104 b': {'SVM': 77.83653846153847}}
+Traceback (most recent call last):
+  File "Finetune-SVM-for-POJ-104.py", line 163, in <module>
+    main()
+  File "Finetune-SVM-for-POJ-104.py", line 39, in main
+    print("\pacc{"+ds_name+"}{Fig. ?}{"+"{:.1f}".format(LR)+"}{"+"{:.1f}".format(DT)+"}{"+"{:.1f}".format(KNN)+"}{"+"{:.1f}".format(SVM)+"}")
+ValueError: Unknown format code 'f' for object of type 'str'
