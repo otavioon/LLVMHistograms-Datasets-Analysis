@@ -10,7 +10,7 @@ import pandas as pd
 verbosity_level = 2
 
 def verbose(level, msg):
-    if level >= verbosity_level:
+    if verbosity_level >= level:
         print("  "*level + msg)
 
 def main():
